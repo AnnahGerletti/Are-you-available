@@ -3,6 +3,10 @@ var router = express.Router()
 
 var db = require('../db')
 
+// router.get('/', (req, res) => {
+//   res.send('working')
+// })
+
 router.get('/', (req, res) => {
   var knex = req.app.get('db')
   res.json(['Hello', 'Hi', "G'day"])

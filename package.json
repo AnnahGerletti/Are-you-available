@@ -33,6 +33,7 @@
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
+    "superagent": "^3.5.2",
     "tap-diff": "^0.1.1",
     "tape": "^4.6.3",
     "webpack": "^3.6.0",
@@ -43,9 +44,11 @@
     "cors": "^2.8.4",
     "css-loader": "^0.28.7",
     "express": "^4.15.5",
+    "knex": "^0.13.0",
+    "pbkdf2": "^3.0.14",
     "rc-calendar": "^9.1.8",
     "react-router-dom": "^4.2.2",
-    "style-loader": "^0.18.2",
-    "superagent": "^3.5.2"
+    "sqlite3": "3.1.10",
+    "style-loader": "^0.18.2"
   }
 }

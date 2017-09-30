@@ -20,10 +20,7 @@ const corsOptions = {
 //your server must use the routes BELOW the cors options (and other middleware) is set
 server.use('/v1/', routes)
 
-module.exports = () => {
+module.exports = function(db) {
+  server.set('db', db)
   return server
 }
-
-// function(db) {
-//   server.set('db', db)
-//   return server

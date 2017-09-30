@@ -1,11 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HashRouter as Router, Route } from 'react-router-dom'
 
-import App from './components/App'
+import User from './components/User';
+import Admin from './components/Admin';
+// import registerServiceWorker from './registerServiceWorker';
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-  )
-})
+ReactDOM.render((
+  <Router>
+    <div>
+      <Route exact path='/' component={User} />
+      <Route exact path='/admin' component={Admin} />
+    </div>
+  </Router>
+), document.getElementById('root'))
+// registerServiceWorker();

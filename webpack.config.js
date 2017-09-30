@@ -8,7 +8,14 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       loader: 'babel-loader',
-      exclude: /node_modules/
+      exclude: /node_modules/,
+      query: {
+          presets: ['es2015']
+      }
+    },
+    {
+    test: /\.css$/,
+    loaders: ['style-loader', 'css-loader'],
     }]
   },
   resolve: {

@@ -13,13 +13,13 @@ router.get('/', (req, res) => {
 
   //example of a db call from a route:
 
-  // db.dbFunction(knex)
-  //   .then(response => {
-  //     res.json(response)
-  //   })
-  //   .catch(err => {
-  //     res.sendStatus(500).send(err + ' SERVER ERROR')
-  //   })
+  db.dbFunction(knex)
+    .then(response => {
+      res.json(response)
+    })
+    .catch(err => {
+      res.sendStatus(500).send(err + ' SERVER ERROR')
+    })
 })
 
 module.exports = router

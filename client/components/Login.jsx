@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
+
 import { Link } from 'react-router-dom'
-// import { loginUser } from '../actions/login'
-// import ErrorMsg from './ErrorMsg'
+
 
 export default class Login extends React.Component  {
   constructor (props) {

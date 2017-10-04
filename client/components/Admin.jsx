@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-// import logo from '../logo.svg';
 import '../App.css';
 import Register from './Register'
 
@@ -18,6 +17,6 @@ class Admin extends Component {
     );
   }
 }
-  // <img src={logo} className="App-logo" alt="logo" />
+
 
 export default Admin;

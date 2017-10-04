@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 var cors = require('cors')
 var server = express()
 
-var routes = require('./routes/index')
+var routes = require('./routes/api')
 
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, '../public')))
@@ -18,7 +18,7 @@ const corsOptions = {
 
 
 //your server must use the routes BELOW the cors options (and other middleware) is set
-server.use('/v1/', routes)
+server.use('/api', routes)
 
 module.exports = function(db) {
   server.set('db', db)

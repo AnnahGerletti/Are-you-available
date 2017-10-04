@@ -4,8 +4,7 @@ import request from 'superagent'
 
 import Header from './Header'
 
-
-export default class Login extends React.Component  {
+export default class Login extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -22,27 +21,24 @@ export default class Login extends React.Component  {
       [e.target.name]: e.target.value
     })
   }
-  loginUser(creds) {
+  loginUser (creds) {
     request
       .post('http://localhost:3000/api/login')
       .send(creds) // sends a JSON post body
       .end((err, res) => {
         console.log('err' + err)
         console.log(res.body)
-        if (res.body.length === 0){
+        if (res.body.length === 0) {
           alert('Not a user')
-        }
-        else if (res.body.length === 1 && res.body[0].isAdmin === 1 ) {
+        } else if (res.body.length === 1 && res.body[0].isAdmin === 1) {
           alert('Admin User')
           document.location = '/#/admin'
-        }
-        else {
+        } else {
           alert('Standard User')
           document.location = '/#/events'
-
         }
-    // Calling the end function will send the request
-  });
+        // Calling the end function will send the request
+      })
   }
   handleClick (e) {
     e.preventDefault()
@@ -53,20 +49,19 @@ export default class Login extends React.Component  {
     }
     this.loginUser(creds)
     // this.props.loginUser(creds, () => document.location = '/#/')
-
   }
 
   render () {
     return (
       <div className="App">
-          <Header name='Login Page' />
-          <form className="Form" onSubmit={this.handleClick} >
-                <p><input name='username' onChange={this.handleChange} placeholder='Username' /></p>
-                <p><input type='password' name='password' onChange={this.handleChange} placeholder='Password' /></p>
-                <button type="submit" className="NoLeftButton loneButton">Login</button>
-          </form>
-          <Link to='/events'>Events</Link>
-    </div>
+        <Header name='Login Page' />
+        <form onSubmit={this.handleClick} >
+          <p><input className="Form" name='username' placeholder="Login" type="text" onChange={this.handleChange} placeholder='Username' /></p>
+        <p><input className="Form" name='password' placeholder="Password" type="text" onChange={this.handleChange} placeholder='Password' /></p>
+          <button type="submit" className="Form-Button">Login</button>
+        </form>
+        <Link to='/events'>Events</Link>
+      </div>
     )
   }
 }

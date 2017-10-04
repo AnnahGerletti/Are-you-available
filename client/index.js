@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route } from 'react-router-dom'
-import { Provider } from 'react-redux'
 
 // import store from './store'
 
@@ -9,8 +8,6 @@ import Events from './components/Events'
 import Admin from './components/Admin'
 import Login from './components/Login'
 import Event from './components/Event'
-
-
 
 ReactDOM.render((
   <Router>

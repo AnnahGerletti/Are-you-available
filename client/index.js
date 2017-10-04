@@ -5,16 +5,20 @@ import { Provider } from 'react-redux'
 
 // import store from './store'
 
-import User from './components/User';
-import Admin from './components/Admin';
+import Events from './components/Events'
+import Admin from './components/Admin'
 import Login from './components/Login'
+import Event from './components/Event'
+
+
 
 ReactDOM.render((
   <Router>
     <div>
-      <Route exact path='/' component={User} />
-      <Route exact path='/login' component={Login} />
+      <Route exact path='/' component={Login} />
+      <Route exact path='/events' component={Events} />
       <Route exact path='/admin' component={Admin} />
+      <Route exact path='/event' component={Event} />
     </div>
   </Router>
 ), document.getElementById('root'))

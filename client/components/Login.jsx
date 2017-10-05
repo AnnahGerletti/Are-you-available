@@ -11,8 +11,8 @@ export default class Login extends React.Component {
       username: '',
       password: ''
     }
-    this.handleClick = this.handleClick.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+    // this.handleClick = this.handleClick.bind(this)
+    // this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange (e) {
@@ -56,8 +56,8 @@ export default class Login extends React.Component {
       <div className="App">
         <Header name='Login Page' />
         <form onSubmit={this.handleClick} >
-          <p><input className="Form" name='username' placeholder="Login" type="text" onChange={this.handleChange} placeholder='Username' /></p>
-        <p><input className="Form" name='password' placeholder="Password" type="text" onChange={this.handleChange} placeholder='Password' /></p>
+          <p><input className="Form" name='username' placeholder="Login" type="text" onChange={this.handleChange} /></p>
+        <p><input className="Form" name='password' placeholder="Password" type="password" onChange={this.handleChange} /></p>
           <button type="submit" className="Form-Button">Login</button>
         </form>
         <Link to='/events'>Events</Link>

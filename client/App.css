@@ -21,17 +21,17 @@
   width: 100%;
 }
 
-.Cal-container {
+.Pic-container {
   font-size: large;
   margin-left: 10em;
   margin-top: 1em;
-  /*flex-grow: 1;*/
+  flex-grow: 1;
 }
 
 .Dir-container {
   font-family: fantasy;
   text-align: center;
-  flex-grow: 1
+  flex-grow: 6
 }
 /*Admin page*/
 

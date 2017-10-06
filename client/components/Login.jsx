@@ -56,9 +56,9 @@ export default class Login extends React.Component {
       <div className="App">
         <Header name='Login Page' />
         <form onSubmit={this.handleClick} >
-          <p><input className="Form" name='username' placeholder="Email" type="text" onChange={this.handleChange} value={this.state.username}/></p>
-        <p><input className="Form" name='password' placeholder="Password" type="password" onChange={this.handleChange} value={this.state.password}/></p>
-          <button type="submit" className="Form-Button">Login</button>
+            <p><input className="Register-form" name='username' placeholder="Email" type="text" onChange={this.handleChange} value={this.state.username}/></p>
+            <p><input className="Register-form" name='password' placeholder="Password" type="password" onChange={this.handleChange} value={this.state.password}/></p>
+            <button type="submit" className="Register-button">Login</button>
         </form>
         <Link to='/events'>Events</Link>
       </div>

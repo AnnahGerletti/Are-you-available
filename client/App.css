@@ -51,20 +51,11 @@
 }
 
 .Register-button {
-    background-color: lightgrey;
-    color: blue;
-    padding: 6px 10px;
+    background-color: #e1e894;
+    color: #222c3a;
+    padding: 15px 25px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-left: 1em;
-}
-
-.Form {
-   width: 14em;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 1.2em
 }

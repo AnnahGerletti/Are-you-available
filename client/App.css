@@ -35,6 +35,12 @@
 }
 /*Admin page*/
 
+.Form-container {
+  margin-left: 1em;
+  padding-left: 2em;
+}
+
+
 .Register-form {
     width: 14em;
     padding: 12px 20px;

@@ -19,4 +19,11 @@ router.get('/events', (req, res) => {
     })
 })
 
+router.get('/event/:id', (req, res) => {
+  events.getEvent(req.params.id)
+    .then(function (event) {
+      res.send(event[0])
+    })
+})
+
 module.exports = router

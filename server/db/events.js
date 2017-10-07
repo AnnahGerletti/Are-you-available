@@ -8,6 +8,14 @@ function listEvents () {
   )
 }
 
+function getEvent (id) {
+  return(db('events')
+    .select()
+    .where('id', id)
+  )
+}
+
 module.exports ={
-  listEvents
+  listEvents,
+  getEvent
 }

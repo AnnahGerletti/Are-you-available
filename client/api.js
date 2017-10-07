@@ -29,10 +29,19 @@ function listEvents(){
         events: res.body
       })
     })
-
 }
 
+function getEvent(id){
+  request
+    .get('http://localhost:3000/api/event/' + id)
+    .end((err, res) => {
+      this.setState({
+        event: res.body
+      })
+    })
+}
 module.exports = {
   loginUser,
-  listEvents
+  listEvents,
+  getEvent
 }

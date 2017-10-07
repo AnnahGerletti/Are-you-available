@@ -4,6 +4,7 @@ import 'rc-calendar/assets/index.css'
 import RangeCalendar from 'rc-calendar/lib/RangeCalendar'
 
 import Header from './Header'
+import api from '../api'
 
 const formatStr = 'YYYY-MM-DD HH:mm:ss';
 function format(v) {
@@ -21,21 +22,31 @@ class Event extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            dates: {
-                start: '',
-                end: ''
-            }
+            event: {}
         }
+      api.getEvent=api.getEvent.bind(this)
     }
+
+    componentWillMount(){
+      api.getEvent(this.props.match.params.id)
+    }
+
     render() {
         return (
             <div className="App">
                 <Header name='A single Event' />
                 <div className="Main-container">
-                    <div className="Cal-container">
+                      <div className='Event-details'>
+                          <h3>{this.state.event.eventName}</h3>
+                          <p>{this.state.event.description}</p>
+                          <p>Date Range begins: {this.state.event.rangeStart}</p>
+                          <p>Date Range ends: {this.state.event.rangeEnd}</p>
+                          <img src={this.state.event.photo} />
+                      </div>
+                      <div className="Cal-container">
                         <RangeCalendar onSelect={onStandaloneSelect}/>
                         <button>Select These Dates</button>
-                    </div>
+                      </div>
                 </div>
             </div>
         )

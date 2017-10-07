@@ -27,7 +27,7 @@ class Events extends Component {
         <Header name='When are you Avalaible'/>
         <div className="Main-container">
           <div className="Pic-container">
-            <p> future picture </p>
+            <img src='/images/event.jpg'/>
           </div>
           <div className="Dir-container">
             <p>
@@ -35,10 +35,12 @@ class Events extends Component {
                 Please select the range of dates you can attend the event.<br/>
                 only select one set of dates.
             </p>
-            {this.state.events.map((name) =>{
-              return <p>{name.eventName}</p>
+
+            <ul>{this.state.events.map((name) =>{
+              const link = "/event/" + name.id
+              return <li><Link to={link} key={name.id}>{name.eventName}</Link></li>
             })}
-            <Link to='/event'>Event</Link>
+          </ul>
           </div>
         </div>
       </div>

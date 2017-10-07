@@ -15,7 +15,7 @@ ReactDOM.render((
       <Route exact path='/' component={Login} />
       <Route exact path='/events' component={Events} />
       <Route exact path='/admin' component={Admin} />
-      <Route exact path='/event' component={Event} />
+      <Route exact path='/event/:id' component={Event} />
     </div>
   </Router>
 ), document.getElementById('root'))

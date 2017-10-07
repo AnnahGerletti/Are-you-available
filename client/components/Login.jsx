@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import request from 'superagent'
 
 import Header from './Header'
+import api from '../api'
 
 export default class Login extends React.Component {
   constructor (props) {
@@ -21,25 +22,7 @@ export default class Login extends React.Component {
       [e.target.name]: e.target.value
     })
   }
-  loginUser (creds) {
-    request
-      .post('http://localhost:3000/api/login')
-      .send(creds) // sends a JSON post body
-      .end((err, res) => {
-        console.log('err' + err)
-        console.log(res.body)
-        if (res.body.length === 0) {
-          alert('Not a user')
-        } else if (res.body.length === 1 && res.body[0].isAdmin === 1) {
-          alert('Admin User')
-          document.location = '/#/admin'
-        } else {
-          alert('Standard User')
-          document.location = '/#/events'
-        }
-        // Calling the end function will send the request
-      })
-  }
+
   handleClick (e) {
     e.preventDefault()
     const { username, password } = this.state
@@ -47,7 +30,7 @@ export default class Login extends React.Component {
       email: username.trim(),
       password: password.trim()
     }
-    this.loginUser(creds)
+    api.loginUser(creds)
     // this.props.loginUser(creds, () => document.location = '/#/')
   }
 

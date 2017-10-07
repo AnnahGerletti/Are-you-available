@@ -21,9 +21,15 @@ function loginUser (creds) {
     })
 }
 
-function listEvents () {
+function listEvents(){
   request
-    .get()
+    .get('http://localhost:3000/api/events')
+    .end((err, res) => {
+      this.setState({
+        events: res.body
+      })
+    })
+
 }
 
 module.exports = {

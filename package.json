@@ -45,6 +45,7 @@
     "css-loader": "^0.28.7",
     "express": "^4.15.5",
     "knex": "^0.13.0",
+    "moment": "^2.18.1",
     "pbkdf2": "^3.0.14",
     "rc-calendar": "^9.1.8",
     "react-redux": "^5.0.6",

@@ -2,6 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import 'rc-calendar/assets/index.css'
 import RangeCalendar from 'rc-calendar/lib/RangeCalendar'
+import moment from 'moment';
+import 'moment/locale/en-gb';
 
 import Header from './Header'
 import api from '../api'
@@ -17,6 +19,15 @@ function onStandaloneSelect(value) {
     console.log('onSelect');
     console.log(format(value[0]), format(value[1]));
 }
+
+function disabledDate(current) {
+  const date = moment();
+  date.hour(0);
+  date.minute(0);
+  date.second(0);
+  return current.isBefore(date);  // can not select days before today
+}
+
 
 class Event extends React.Component {
     constructor(props) {
@@ -44,7 +55,7 @@ class Event extends React.Component {
                           <img src={this.state.event.photo} />
                       </div>
                       <div className="Cal-container">
-                        <RangeCalendar onSelect={onStandaloneSelect}/>
+                        <RangeCalendar onSelect={onStandaloneSelect} disabledDate={disabledDate}/>
                         <button>Select These Dates</button>
                       </div>
                 </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import request from 'superagent'
 
 import Header from './Header'
-import api from '../api'
+import api from '../apiClient'
 
 export default class Login extends React.Component {
   constructor (props) {

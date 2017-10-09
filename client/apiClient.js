@@ -3,7 +3,7 @@ import request from 'superagent'
 
 function loginUser (creds) {
   request
-    .post('http://localhost:3000/api/login')
+    .post('/api/v1/login')
     .send(creds) // sends a JSON post body
     .end((err, res) => {
       console.log('err' + err)
@@ -23,7 +23,7 @@ function loginUser (creds) {
 
 function listEvents(){
   request
-    .get('http://localhost:3000/api/events')
+    .get('/api/v1/events')
     .end((err, res) => {
       this.setState({
         events: res.body
@@ -33,7 +33,7 @@ function listEvents(){
 
 function getEvent(id){
   request
-    .get('http://localhost:3000/api/event/' + id)
+    .get('/api/v1/event/' + id)
     .end((err, res) => {
       this.setState({
         event: res.body

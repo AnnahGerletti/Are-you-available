@@ -18,7 +18,7 @@ const corsOptions = {
 
 
 //your server must use the routes BELOW the cors options (and other middleware) is set
-server.use('/api', routes)
+server.use('/api/v1', routes)
 
 module.exports = function(db) {
   server.set('db', db)

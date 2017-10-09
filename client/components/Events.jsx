@@ -5,7 +5,7 @@ import 'rc-calendar/assets/index.css'
 // import logo from '../logo.svg';
 import '../App.css'
 import Header from './Header'
-import api from  '../api'
+import api from  '../apiClient'
 
 class Events extends Component {
   constructor(props){

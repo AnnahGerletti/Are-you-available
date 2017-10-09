@@ -2,17 +2,8 @@ import React from 'react'
 import RangeCalendar from 'rc-calendar/lib/RangeCalendar'
 
 import Header from './Header'
+import helper from '../helper'
 
-const formatStr = 'YYYY-MM-DD HH:mm:ss';
-function format(v) {
-    return v
-        ? v.format(formatStr)
-        : '';
-}
-function onStandaloneSelect(value) {
-    console.log('onSelect');
-    console.log(format(value[0]), format(value[1]));
-}
 
 export default class Register extends React.Component {
   constructor (props) {
@@ -30,15 +21,13 @@ export default class Register extends React.Component {
   }
   saveNewEvent (e) {
     e.preventDefault()
-    console.log({e})
   }
   render () {
     return (
       <div className="App">
-        <Header name='Admin Schedule Events' />
           <div className="Main-container">
             <div className="Cal-container">
-                <RangeCalendar onSelect={onStandaloneSelect}/>
+                <RangeCalendar onSelect={helper.onStandaloneSelect} disabledDate={helper.disabledDate}/>
                 <button>Select These Dates</button>
             </div>
             <div className="Form-container">

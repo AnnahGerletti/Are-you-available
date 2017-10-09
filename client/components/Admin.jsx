@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 
 import '../App.css';
 import Register from './Register'
+import Header from './Header'
 
 class Admin extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Future Admin page</h2>
-        </div>
-        <div>
+          <Header name='Admin Schedule Events Page'/>
           <Register />
         </div>
-      </div>
     );
   }
 }

@@ -9,7 +9,7 @@ function loginUser (email, password) {
       email: email,
       pwhash: hash
     })
-    .select('isAdmin')
+    .select('isAdmin', 'id')
     .then( function (user) {
       return(user)
     })

@@ -35,17 +35,31 @@ class Event extends React.Component {
         this.state = {
             event: {}
         }
-      api.getEvent=api.getEvent.bind(this)
+    this.saveEvent = this.saveEvent.bind(this)
+    this.backToEvents = this.backToEvents.bind(this)
     }
 
-    componentWillMount(){
-      api.getEvent(this.props.match.params.id)
+    componentDidMount(){
+      api.getEvent(this.props.match.params.id, this.saveEvent)
+    }
+
+    saveEvent(err, event){
+      if(!err){
+        this.setState({event})
+      }
+    }
+
+    backToEvents(e){
+      const userId = this.props.match.params.user
+      this.props.history.push(`/${userId}/events`)
     }
 
     render() {
         return (
             <div className="App">
                 <Header name='A single Event' />
+
+                <button className="Back-button" onClick={this.backToEvents}>Return to Events Page </button>
                 <div className="Main-container">
                       <div className='Event-details'>
                           <h3>{this.state.event.eventName}</h3>
@@ -65,3 +79,4 @@ class Event extends React.Component {
 }
 
 export default Event
+/* <Link to=''>Return to Events Page</Link> */

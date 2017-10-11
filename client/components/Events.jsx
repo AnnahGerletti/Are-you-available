@@ -13,11 +13,17 @@ class Events extends Component {
     this.state = {
       events: []
     }
-    api.listEvents = api.listEvents.bind(this)
+    this.saveEvents = this.saveEvents.bind(this)
   }
 
-  componentWillMount() {
-    api.listEvents()
+  componentWillMount(){
+    api.listEvents(this.saveEvents)
+  }
+
+  saveEvents(err, events){
+    if (!err){
+      this.setState({events})
+    }
   }
 
   render () {
@@ -36,9 +42,9 @@ class Events extends Component {
                 only select one set of dates.
             </p>
 
-            <ul>{this.state.events.map((name) =>{
-              const link = "/event/" + name.id
-              return <li><Link to={link} key={name.id}>{name.eventName}</Link></li>
+            <ul>{this.state.events.map((event) =>{
+              const link = "/" + this.props.match.params.user + "/event/" + event.id
+              return <li key={event.id}><Link to={link}>{event.eventName}</Link></li>
             })}
           </ul>
           </div>

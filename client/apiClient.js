@@ -12,32 +12,28 @@ function loginUser (creds) {
         alert('Not a user')
       } else if (res.body.length === 1 && res.body[0].isAdmin === 1) {
         alert('Admin User')
-        document.location = '/#/admin'
+        document.location = '/#/' + res.body[0].id + '/admin'
       } else {
         alert('Standard User')
-        document.location = '/#/events'
+        document.location = '/#/' + res.body[0].id + '/events'
       }
       // Calling the end function will send the request
     })
 }
 
-function listEvents(){
+function listEvents(callback){
   request
     .get('/api/v1/events')
     .end((err, res) => {
-      this.setState({
-        events: res.body
-      })
+      callback(err, res.body)
     })
 }
 
-function getEvent(id){
+function getEvent(id, callback){
   request
     .get('/api/v1/event/' + id)
     .end((err, res) => {
-      this.setState({
-        event: res.body
-      })
+      callback(err, res.body)
     })
 }
 module.exports = {

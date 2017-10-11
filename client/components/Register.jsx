@@ -33,9 +33,9 @@ export default class Register extends React.Component {
             <div className="Form-container">
               <form onSubmit={this.saveNewEvent}>
                 <p><input className="Register-form" name="name" placeholder="Event Name" type="text" onChange={(e) => this.updateNewEvent(e)}/></p>
-                <p><input className="Register-form" name="name" placeholder="Event Discription" type="textarea" onChange={(e) => this.updateNewEvent(e)}/></p>
                 <p><input className="Register-form" name="name" placeholder="Start Date" type="" onChange={(e) => this.updateNewEvent(e)}/></p>
                 <p><input className="Register-form" name="name" placeholder="End Date" type="" onChange={(e) => this.updateNewEvent(e)}/></p>
+                <p><input className="Register-form" name="name" placeholder="Event Description" type="textarea" onChange={(e) => this.updateNewEvent(e)}/></p>
                 <input className="Register-button" type="submit"/>
               </form>
             </div>

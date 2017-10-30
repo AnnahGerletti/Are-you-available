@@ -1,0 +1,17 @@
+If user has already submitted a set of dates
+
+Option 1
+
+1. in eventbd.js create a new db function updateDates()
+
+2. within the .post route to /date, add a step to check if dates exist in the db for the userid and eventid.
+
+3. if they do then call ubdateDates db function
+
+4. Now need to difereciate between a response of insert vs update from the server side api.
+
+5. will do this within the .post '/date' route in the response sending back not only the db json obj but also a message to distinguish from update to insert.
+
+6. in the apiClient.js will update insertDate to take in the response use a if/else statement to determine if its an update or insert.
+
+7. tell the callback func inside the event compt to alert insert or update.

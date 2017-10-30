@@ -15,7 +15,17 @@ function getEvent (id) {
   )
 }
 
+function insertDate (start, end, user_id, event_id) {
+  return (db('dates')
+    .insert({
+      start:start, end:end, user_id:user_id, event_id:event_id})
+  )
+}
+
 module.exports ={
   listEvents,
-  getEvent
+  getEvent,
+  insertDate
 }
+
+//why pass in the db like doggo did??

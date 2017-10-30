@@ -36,8 +36,20 @@ function getEvent(id, callback){
       callback(err, res.body)
     })
 }
+
+function insertDate(saveDates, callback){
+  request
+    .post('/api/v1/date')
+    .send(saveDates)
+    .end((err, res) => {
+      callback(err, res.body)
+    })
+}
+
+
 module.exports = {
   loginUser,
   listEvents,
-  getEvent
+  getEvent,
+  insertDate
 }

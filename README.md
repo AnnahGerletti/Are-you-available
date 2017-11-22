@@ -12,4 +12,4 @@ cd [your-app] && npm install
 
 To start the development server with a watcher that refreshes your browser, run `npm start`. The assets built by webpack are placed in `server/static`. This folder is defined as a static folder in an Express.js server that can be started with `npm run server`.
 
-Additional components should be placed in `client/components`
+Additional components should be placed in `client/components`.

@@ -1,8 +1,8 @@
 {
-  "name": "boilerplate-react-webpack",
-  "version": "0.1.1",
-  "description": "A webpack React starter",
-  "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
+  "name": "can-you-make-it",
+  "version": "0.1",
+  "description": "Multi-tiered scheduling app",
+  "repository": "https://github.com/AnnahGerletti/Can-you-make-it",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
@@ -19,7 +19,7 @@
       "react"
     ]
   },
-  "author": "EDA",
+  "author": "Annah Gerletti",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.21.0",

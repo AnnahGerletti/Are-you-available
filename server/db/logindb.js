@@ -16,6 +16,6 @@ function loginUser (email, password) {
   )
 }
 
-module.exports ={
+module.exports = {
   loginUser
 }

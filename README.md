@@ -1,15 +1,16 @@
-# A starter webpack project for React
+# Can you Make it 
+### Three-tier schedule based app, designed with custom and third-party React components.
 
-This is a starter project that uses webpack to transpile and bundle ES6 React code. To use, consider this approach:
+# Set up your environment 
 
-* Fork this repo
+* clone or Fork this repo
 * Rename your repo according to the app you're building
 
 ```sh
-git clone https://github.com/dev-academy-challenges/[your-app].git
-cd [your-app] && npm install
+git clone https://github.com/AnnahGerletti/Can-you-make-it.git
+cd Can-you-make-it && npm install
 ```
 
-To start the development server with a watcher that refreshes your browser, run `npm start`. The assets built by webpack are placed in `server/static`. This folder is defined as a static folder in an Express.js server that can be started with `npm run server`.
+## This repo is still in development stages but was created using Reacts, create-React-App environment. 
 
-Additional components should be placed in `client/components`
+
